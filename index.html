@@ -4,16 +4,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Daristos' Legacy</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+<div class="overlay"></div>
+
 <div id="game-container">
-  <div id="story-text"></div>
+  <div class="header">
+    <h1 class="game-title">Daristos' Legacy</h1>
+    <div class="separator"></div>
+  </div>
+  
+  <div id="story-content" class="fade-in">
+    <div id="story-text"></div>
+  </div>
+  
   <div class="choices" id="choices-container"></div>
-  <div id="back-btn-container">
-    <button id="back-btn" onclick="goBack()" disabled>Retroceder</button>
+  
+  <div id="controls-container">
+    <button id="back-btn" class="control-btn" onclick="goBack()" disabled>⟵ Retroceder</button>
+    <button id="reset-btn" class="control-btn" onclick="resetGame()">Reiniciar Partida</button>
   </div>
 </div>
 
