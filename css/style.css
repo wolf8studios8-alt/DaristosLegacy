@@ -10,7 +10,183 @@ body {
   min-height: 100vh;
 }
 #game-container {
-  max-width: 800px;
+  max-width: 800px;:root {
+  --gold: #d4af37;
+  --gold-dark: #997a00;
+  --bg-dark: #050505;
+  --panel-bg: rgba(15, 15, 15, 0.85);
+  --text-light: #e8e3d3;
+}
+
+body {
+  background-color: var(--bg-dark);
+  background-image: radial-gradient(circle at center, #1a1813 0%, #050505 100%);
+  color: var(--text-light);
+  font-family: 'Cormorant Garamond', serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+/* Efecto de partículas/niebla sutil de fondo */
+.overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)" opacity="0.03"/></svg>');
+  pointer-events: none;
+  z-index: -1;
+}
+
+#game-container {
+  max-width: 850px;
+  width: 100%;
+  background: var(--panel-bg);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.1), inset 0 0 20px rgba(0,0,0,0.8);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  min-height: 550px;
+  position: relative;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.game-title {
+  font-size: 2.5em;
+  color: var(--gold);
+  margin: 0;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+}
+
+.separator {
+  height: 2px;
+  width: 60%;
+  margin: 15px auto 0;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.6;
+}
+
+#story-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#story-text {
+  font-size: 1.4em;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  white-space: pre-wrap;
+  text-align: justify;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+/* Botones Principales */
+button {
+  background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+  color: var(--gold);
+  border: 1px solid var(--gold-dark);
+  padding: 15px 30px;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-family: inherit;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  width: 80%;
+  max-width: 500px;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%; width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+  transition: all 0.5s ease;
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+button:hover {
+  background: #1f1a0f;
+  border-color: var(--gold);
+  color: #fff;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+  transform: scale(1.02);
+}
+
+/* Controles inferiores */
+#controls-container {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  padding-top: 20px;
+}
+
+.control-btn {
+  width: auto;
+  padding: 8px 16px;
+  font-size: 1em;
+  background: transparent;
+  border: 1px solid transparent;
+  color: #888;
+}
+
+.control-btn:hover:not(:disabled) {
+  border-color: var(--gold-dark);
+  color: var(--gold);
+  transform: none;
+  box-shadow: none;
+}
+
+#back-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+#reset-btn:hover {
+  color: #e61919;
+  border-color: #e61919;
+}
+
+/* Animaciones */
+.fade-in {
+  animation: fadeIn 0.8s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.center-text { text-align: center; }
+.box-text { border: 1px solid var(--gold); padding: 5px; display: inline-block; margin: 10px auto; }
+.red-text { color: #ff4c4c; font-weight: bold; text-shadow: 0 0 5px rgba(255, 76, 76, 0.5); }
   width: 100%;
   background: #121212;
   padding: 30px;
