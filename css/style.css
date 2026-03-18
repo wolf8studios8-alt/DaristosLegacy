@@ -23,24 +23,15 @@ body {
 
 /* NUEVO: Estilos para la imagen de fondo inmersiva */
 .bg-image-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* INSTRUCCIONES: Reemplace la URL a continuación con su imagen */
-  /* He usado una imagen de demostración de un castillo misterioso */
-  background-image: url('https://images.unsplash.com/photo-1502481851512-e9e2529bfbf9?q=80&w=2069&auto=format&fit=cover'); 
-  /* Adaptación a cada dispositivo */
-  background-size: cover; 
+  /* El "../" le dice al navegador: "sal de la carpeta css y busca el archivo" */
+  background-image: url('main/css/image.png'); 
+  
+  background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  /* Mezcla con el fondo negro bajando el alpha (opacidad) */
-  opacity: 0.1; /* 10% de opacidad para un efecto muy sutil. Súbalo si lo desea más visible. */
-  filter: grayscale(100%); /* Opcional: convierte a blanco y negro para mejor fusión */
-  z-index: -2; /* Detrás de todo, incluido el efecto de ruido */
+  opacity: 0.1; /* El alpha: súbelo a 0.3 o 0.4 si lo ves muy oscuro */
+  filter: grayscale(100%);
+  z-index: -2;
 }
-
 /* Efecto de partículas/niebla sutil de fondo (capa superior a la imagen) */
 .overlay {
   position: fixed;
