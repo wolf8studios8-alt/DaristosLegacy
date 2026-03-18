@@ -1,6 +1,6 @@
 const storyData = {
     "*you follow him*": {
-        text: "And just like this, your adventure has just begun... but to what price?\n\n<div style='text-align:center;'>[END OF DEMO]</div>\n<span style='color:grey'>[full version available if the Kickstarter succeeds]</span>",
+        text: "And just like this, your adventure has just begun... but to what price?\n\n<div class='center-text'>[END OF DEMO]</div>\n<span style='color:grey'>[full version available if the Kickstarter succeeds]</span>",
         choices: []
     },
     "... Alright, I'll help": {
@@ -12,11 +12,11 @@ const storyData = {
         choices: ["Try again"]
     },
     "Charge towards The Watcher": {
-        text: "You try to charge againt Him... But there is no one to charge against.\nJust an eye, a watchful eye in the sky. Watching you.\n\nYou understand now;\n<div style='text-align:center;'>[You Are Not In Control]</div>\n",
+        text: "You try to charge againt Him... But there is no one to charge against.\nJust an eye, a watchful eye in the sky. Watching you.\n\nYou understand now;\n<div class='center-text'>[You Are Not In Control]</div>\n",
         choices: ["Cry"]
     },
     "Confront The Watcher": {
-        text: "...\nSo thee have chosen death\nThy bravery is untold\nThe fate of Æthelgard is sealed with a heart like thou\n...\nThee shall perish, but not now.\nIt's not thy time to die.\nRest, Player, thee will need it.\n<div style='text-align:center;'>[May thy woes be many, and thy days few]</div>\n\n<div style='text-align:center;'>+(box:\"X\")</div>",
+        text: "...\nSo thee have chosen death\nThy bravery is untold\nThe fate of Æthelgard is sealed with a heart like thou\n...\nThee shall perish, but not now.\nIt's not thy time to die.\nRest, Player, thee will need it.\n<div class='center-text'>[May thy woes be many, and thy days few]</div>\n\n<div class='center-text'>+(box:\"X\")</div>",
         choices: ["Fight"]
     },
     "Cry": {
@@ -28,7 +28,7 @@ const storyData = {
         choices: ["Try again"]
     },
     "Facetank it": {
-        text: "The shadows enter your body like poison.\nIt's cold as a corpse... And thankfully, you are one.\n\n<span style='color:red;'>HOW?!\nTHEE SHOULD HAVE BEEN COMPLETELY WIPED AWAY!</span>\n\nAnother beam impacts, and another, but you are perfecty fine.",
+        text: "The shadows enter your body like poison.\nIt's cold as a corpse... And thankfully, you are one.\n\n<span class='red-text'>HOW?!\nTHEE SHOULD HAVE BEEN COMPLETELY WIPED AWAY!</span>\n\nAnother beam impacts, and another, but you are perfecty fine.",
         choices: ["Charge towards The Watcher", "Try to go back", "Try to talk it out"]
     },
     "Fight": {
@@ -40,7 +40,7 @@ const storyData = {
         choices: ["Who are you?", "Why did you bring me back?"]
     },
     "Go even further": {
-        text: "<span style='color:red; background: linear-gradient(to right, #ffffff 0%, #e61919 50%, #000000 100%); font-weight:bold; padding:2px 5px;'>L E A V E</span>",
+        text: "<div class='center-text'><span style='color:#000; background: linear-gradient(to right, #ffffff 0%, #e61919 50%, #000000 100%); font-weight:bold; padding:5px 15px; border-radius:3px;'>L E A V E</span></div>",
         choices: ["Confront The Watcher", "Go back"]
     },
     "Go further": {
@@ -64,11 +64,11 @@ const storyData = {
         choices: ["Fight"]
     },
     "Try to go back": {
-        text: "<span style='color:red;'>... I will let thee escape.\nBut next time?</span>\n\n<div style='text-align:center;'>[Watch]</div>\n<div style='text-align:center;'>[Your]</div>\n<div style='text-align:center;'>[Back]</div>",
+        text: "<span class='red-text'>... I will let thee escape.\nBut next time?</span>\n\n<div class='center-text'>[Watch]</div>\n<div class='center-text'>[Your]</div>\n<div class='center-text'>[Back]</div>",
         choices: ["Go back"]
     },
     "Try to talk it out": {
-        text: "You try to even say one word, but stitches form across your lips.\nYou arent able to open your undead mouth.\n\nMore stitches start to form across your body.\nIt hurts like Hell itself\n\nYou arent dead, you are being <span style='color:red;'>Tortured eternally</span>\n\nGame Over, Player.",
+        text: "You try to even say one word, but stitches form across your lips.\nYou arent able to open your undead mouth.\n\nMore stitches start to form across your body.\nIt hurts like Hell itself\n\nYou arent dead, you are being <span class='red-text'>Tortured eternally</span>\n\nGame Over, Player.",
         choices: ["Try again"]
     },
     "What do you mean I'm the only one?": {
